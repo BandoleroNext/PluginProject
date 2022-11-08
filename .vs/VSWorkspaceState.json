@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\FirstTries",
+    "\\FirstTries\\SimpleEQ",
+    "\\FirstTries\\SimpleEQ\\Source",
+    "\\JUCE",
+    "\\JUCE\\JUCE",
+    "\\JUCE\\JUCE\\extras",
+    "\\JUCE\\JUCE\\extras\\Projucer",
+    "\\JUCE\\JUCE\\extras\\Projucer\\Builds",
+    "\\JUCE\\JUCE\\extras\\Projucer\\Builds\\VisualStudio2017"
+  ],
+  "SelectedNode": "\\JUCE\\JUCE\\extras\\Projucer\\Builds\\VisualStudio2017\\Projucer.sln",
+  "PreviewInSolutionExplorer": false
+}
