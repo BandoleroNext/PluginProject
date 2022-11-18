@@ -10,6 +10,24 @@
 
 #include <JuceHeader.h>
 
+enum Slope
+{
+    Slope_12,
+    Slope_24,
+    Slope_36,
+    Slope_48
+};
+
+struct ChainSettings
+{
+    float peakFreq{ 0 }, peakGainInDecibels{ 0 }, peakQuality{ 1.f };
+    float lowCutFreq{ 0 }, highCutFreq{ 0 };
+    
+    Slope lowCutSlope{ Slope::Slope_12 }, highCutSlope{ Slope::Slope_48 };
+};
+
+ChainSettings getChainSettings(juce::AudioProcessorValueTreeState& apvts);
+
 //==============================================================================
 /**
 */
@@ -58,9 +76,25 @@ public:
 
     static juce::AudioProcessorValueTreeState::ParameterLayout
         createParameterLayout();
-    juce::AudioProcessorValueTreeState aptv{ *this, nullptr,"Parameters", createParameterLayout()};
+    juce::AudioProcessorValueTreeState apvts{ *this, nullptr, "Parameters", createParameterLayout()};
     
 private:
+    using Filter = juce::dsp::IIR::Filter<float>;
+
+    using Cutfilter = juce::dsp::ProcessorChain < Filter, Filter, Filter, Filter>;
+
+    using MonoChain = juce::dsp::ProcessorChain <Cutfilter, Filter, Cutfilter>;
+
+    MonoChain leftChain, rightChain;
+
+    enum ChainPositions
+    {
+        LowCut,
+        Peak,
+        HighCut
+    };
+
+
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SimpleEQAudioProcessor)
 };

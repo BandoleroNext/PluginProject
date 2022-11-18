@@ -1,16 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\FirstTries",
-    "\\FirstTries\\SimpleEQ",
-    "\\FirstTries\\SimpleEQ\\Source",
     "\\JUCE",
     "\\JUCE\\JUCE",
     "\\JUCE\\JUCE\\extras",
-    "\\JUCE\\JUCE\\extras\\Projucer",
+    "\\JUCE\\JUCE\\extras\\AudioPluginHost",
+    "\\JUCE\\JUCE\\extras\\AudioPluginHost\\Builds",
+    "\\JUCE\\JUCE\\extras\\AudioPluginHost\\Builds\\VisualStudio2022",
     "\\JUCE\\JUCE\\extras\\Projucer\\Builds",
-    "\\JUCE\\JUCE\\extras\\Projucer\\Builds\\VisualStudio2017"
+    "\\JUCE\\JUCE\\extras\\Projucer\\Builds\\VisualStudio2022"
   ],
-  "SelectedNode": "\\JUCE\\JUCE\\extras\\Projucer\\Builds\\VisualStudio2017\\Projucer.sln",
+  "SelectedNode": "\\JUCE\\JUCE\\extras\\AudioPluginHost\\Builds\\VisualStudio2022\\AudioPluginHost.sln",
   "PreviewInSolutionExplorer": false
 }
