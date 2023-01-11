@@ -351,20 +351,19 @@ void ResponseCurveComponent::paint(juce::Graphics& g)
 	}
 
 	auto leftChannelFFTPath = leftPathProducer.getPath();
-	leftChannelFFTPath.applyTransform(AffineTransform().translation(responseArea.getX(), responseArea.getY()));
+	leftChannelFFTPath.applyTransform(AffineTransform().translation(responseArea.getX(), responseArea.getY()-10));
 
 	g.setColour(Colours::darkorange);
 	g.strokePath(leftChannelFFTPath, PathStrokeType(1.f));
 
-	//auto rightChannelFFTPath = rightPathProducer.getPath();
-	//rightChannelFFTPath.applyTransform(AffineTransform().translation(responseArea.getX(), responseArea.getY()));
+	auto rightChannelFFTPath = rightPathProducer.getPath();
+	rightChannelFFTPath.applyTransform(AffineTransform().translation(responseArea.getX(), responseArea.getY()-10));
 
-	//g.setColour(Colours::darkorange);
-	//g.strokePath(rightChannelFFTPath, PathStrokeType(1.f));
+	g.setColour(Colours::blue);
+	g.strokePath(rightChannelFFTPath, PathStrokeType(1.f));
 
 	g.setColour(Colours::red);
 	g.drawRoundedRectangle(getRenderArea().toFloat(), 4.f, 1.f);
-
 
 	g.setColour(Colours::white);
 	g.strokePath(responseCurve, PathStrokeType(2.f));
